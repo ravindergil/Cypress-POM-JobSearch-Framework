@@ -12,21 +12,16 @@ describe('OrangeHRM_TestSUite', function(){
             this.data=data
         })
     })
-/*
+
     it('1. Verify the website title', function(){
         const utility = new UtilityFunc()
         utility.openURL(this.data.url)
         utility.getPageTitle().should('eq','OrangeHRM')
-        
-        //cy.visit(this.data.url)
-        //cy.title().should('eq','OrangeHRM')
 
     })
 
     it('2. Get the url of the header image', function(){
         const utility = new UtilityFunc()
-        //cy.visit('http://alchemy.hguy.co/orangehrm')
-        //cy.visit(this.data.url)
         utility.openURL(this.data.url)
         var imageTitle = cy.get('div#divLogo > img').title()
         console.log(imageTitle)
@@ -45,10 +40,6 @@ describe('OrangeHRM_TestSUite', function(){
         const utility = new UtilityFunc()
         const addEmpPage = new AddEmpPage()
         const empInfoPage = new EmpInfoPage
-
-       // cy.visit(this.data.url)
-       // cy.login(this.data.userName, this.data.passWord)
-       // cy.wait(1000)
 
         utility.openURL(this.data.url)
         utility.getLogIn(this.data.userName, this.data.passWord)
@@ -76,7 +67,7 @@ describe('OrangeHRM_TestSUite', function(){
         empInfoPage.getWait(1000)
         empInfoPage.getDeleteDialogue().click()
     })
-*/
+
     it('5. Edit user information', function(){
 
         const editInfoPage = new EditInfoPage()
