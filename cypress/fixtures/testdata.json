@@ -8,5 +8,11 @@
     "editFirstName":"John",
     "editLastName":"Doe",
     "gender":"Male",
-    "nationality":"Indian"
+    "nationality":"Indian",
+    "headingDirectory":"Search Directory",
+    "companyName":"Inotech Software & Solutions",
+    "jobTitle":"QA Automation Engineer",
+    "fromDate":"2017-12-13",
+    "toDate":"2022-05-30",
+    "comments":"No Comments"
 }
