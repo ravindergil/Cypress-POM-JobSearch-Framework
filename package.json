@@ -1,0 +1,21 @@
+{
+  "name": "cypress-pom-framework",
+  "version": "1.0.0",
+  "description": "Cypress POM Framework JobSearch Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ravindergil"
+  },
+  "keywords": [
+    "CypressJobseachPom"
+  ],
+  "author": "Ravinder Gill",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.0"
+  }
+}

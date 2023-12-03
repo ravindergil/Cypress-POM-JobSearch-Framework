@@ -1,0 +1,12 @@
+{
+    "url": "http://alchemy.hguy.co/orangehrm", 
+    "pageTitle":"OrangeHRM",
+    "userName": "orange",
+    "passWord": "orangepassword123",
+    "firstName":"FirstName",
+    "lastName":"LastName",
+    "editFirstName":"John",
+    "editLastName":"Doe",
+    "gender":"Male",
+    "nationality":"Indian"
+}
