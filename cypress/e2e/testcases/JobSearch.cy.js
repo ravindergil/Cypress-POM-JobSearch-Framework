@@ -4,6 +4,7 @@ import AddEmpPage from "./pageObjects/AddEmpPage"
 import EmpInfoPage from "./pageObjects/EmpInfoPage"
 import UtilityFunc from "./pageObjects/UtilityFunc"
 import EditInfoPage from "./pageObjects/EditInfoPage"
+import DirectoryPage from "./pageObjects/DirectoryPage"
 
 describe('OrangeHRM_TestSUite', function(){
 
@@ -12,7 +13,7 @@ describe('OrangeHRM_TestSUite', function(){
             this.data=data
         })
     })
-
+/*
     it('1. Verify the website title', function(){
         const utility = new UtilityFunc()
         utility.openURL(this.data.url)
@@ -84,6 +85,23 @@ describe('OrangeHRM_TestSUite', function(){
         editInfoPage.getGender(this.data.gender).click()
         editInfoPage.selectNationality(this.data.nationality)
         editInfoPage.getSaveBtn().click()
+
+    })
+*/
+    it('6. Verify Directory Menu', function(){
+        const utility = new UtilityFunc()
+        const directory = new DirectoryPage()
+        utility.openURL(this.data.url)
+        utility.getLogIn(this.data.userName, this.data.passWord)
+        directory.getDirectory().should('be.visible').click()
+        directory.getSearchDirectory().should('be.visible')
+        directory.getSearchDirectory().then(function(el){
+            const value = el.text()
+            cy.log(value)
+        
+        })
+        directory.getSearchDirectory().should('have.text',this.data.headingDirectory)
+        
 
     })
     
