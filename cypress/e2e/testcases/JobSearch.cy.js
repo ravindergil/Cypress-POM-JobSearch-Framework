@@ -5,6 +5,7 @@ import EmpInfoPage from "./pageObjects/EmpInfoPage"
 import UtilityFunc from "./pageObjects/UtilityFunc"
 import EditInfoPage from "./pageObjects/EditInfoPage"
 import DirectoryPage from "./pageObjects/DirectoryPage"
+import MyInfoPage from "./pageObjects/MyInfoPage"
 
 describe('OrangeHRM_TestSUite', function(){
 
@@ -13,7 +14,7 @@ describe('OrangeHRM_TestSUite', function(){
             this.data=data
         })
     })
-/*
+
     it('1. Verify the website title', function(){
         const utility = new UtilityFunc()
         utility.openURL(this.data.url)
@@ -87,7 +88,7 @@ describe('OrangeHRM_TestSUite', function(){
         editInfoPage.getSaveBtn().click()
 
     })
-*/
+
     it('6. Verify Directory Menu', function(){
         const utility = new UtilityFunc()
         const directory = new DirectoryPage()
@@ -101,7 +102,24 @@ describe('OrangeHRM_TestSUite', function(){
         
         })
         directory.getSearchDirectory().should('have.text',this.data.headingDirectory)
-        
+    })
+
+    it('7. Adding qualifications', function(){
+        const utility = new UtilityFunc()
+        const myInfo = new MyInfoPage()
+        utility.openURL(this.data.url)
+        utility.getLogIn(this.data.userName, this.data.passWord)
+        myInfo.getMyInfo().click()
+        myInfo.getQualification().should('be.visible').click()
+        myInfo.getAddBtn().click()
+        myInfo.getCompanyName().type(this.data.companyName)
+        myInfo.getJobTitle().type(this.data.jobTitle)
+        myInfo.getExpFromDate().type(this.data.fromDate)
+        myInfo.getHeader().click()
+        myInfo.getExpToDate().type(this.data.toDate)
+        myInfo.getHeader().click()
+        myInfo.getAddComments().type(this.data.comments)
+        myInfo.getSaveBtn().click()
 
     })
     
