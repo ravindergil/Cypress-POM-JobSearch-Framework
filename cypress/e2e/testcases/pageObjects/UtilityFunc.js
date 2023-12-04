@@ -18,6 +18,14 @@ class UtilityFunc{
     getPageTitle(){
         return cy.title()
     }
+
+    getDashboard(){
+        return cy.get('a#menu_dashboard_index')
+    }
+
+    getApplyLeave(){
+        return cy.get('div#dashboard-quick-launch-panel-menu_holder>table>tbody>tr :nth-child(4)')
+    }
 }
 
 export default UtilityFunc

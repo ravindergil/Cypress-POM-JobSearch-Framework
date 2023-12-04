@@ -6,6 +6,7 @@ import UtilityFunc from "./pageObjects/UtilityFunc"
 import EditInfoPage from "./pageObjects/EditInfoPage"
 import DirectoryPage from "./pageObjects/DirectoryPage"
 import MyInfoPage from "./pageObjects/MyInfoPage"
+import LeavePage from "./pageObjects/LeavePage"
 
 describe('OrangeHRM_TestSUite', function(){
 
@@ -14,7 +15,7 @@ describe('OrangeHRM_TestSUite', function(){
             this.data=data
         })
     })
-
+/*
     it('1. Verify the website title', function(){
         const utility = new UtilityFunc()
         utility.openURL(this.data.url)
@@ -120,6 +121,29 @@ describe('OrangeHRM_TestSUite', function(){
         myInfo.getHeader().click()
         myInfo.getAddComments().type(this.data.comments)
         myInfo.getSaveBtn().click()
+
+    })
+*/
+    it('8. Applying for a leave', function(){
+        const utility = new UtilityFunc()
+        const leavePage = new LeavePage()
+
+        utility.openURL(this.data.url)
+        utility.getLogIn(this.data.userName, this.data.passWord)
+        utility.getDashboard().click()
+        utility.getApplyLeave().click()
+        leavePage.selectLeaveType().select(this.data.leaveType)
+
+        leavePage.getFromDate().type("2024-01-15")
+        leavePage.getHead().click()
+        utility.getWait(1000)
+        leavePage.getToDate().clear()
+        leavePage.getToDate().type("2024-02-15")
+        leavePage.getHead().click()
+        utility.getWait(1000)
+
+        leavePage.getTextArea().type("Vacations")
+        leavePage.getApplyBtn().click()
 
     })
     
