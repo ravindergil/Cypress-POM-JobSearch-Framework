@@ -40,6 +40,14 @@ class MyInfoPage{
         return cy.get('h1#headChangeWorkExperience')
     }
 
+    getEmergencyContatct(){
+        return cy.get('ul#sidenav :nth-child(3)>a')
+    }
+
+    getEmgContactList(){
+        return cy.get('table#emgcontact_list')
+    }
+
 }
 
 export default MyInfoPage
