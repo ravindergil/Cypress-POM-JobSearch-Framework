@@ -15,7 +15,7 @@ describe('OrangeHRM_TestSUite', function(){
             this.data=data
         })
     })
-/*
+
     it('1. Verify the website title', function(){
         const utility = new UtilityFunc()
         utility.openURL(this.data.url)
@@ -123,7 +123,7 @@ describe('OrangeHRM_TestSUite', function(){
         myInfo.getSaveBtn().click()
 
     })
-*/
+
     it('8. Applying for a leave', function(){
         const utility = new UtilityFunc()
         const leavePage = new LeavePage()
@@ -144,6 +144,22 @@ describe('OrangeHRM_TestSUite', function(){
 
         leavePage.getTextArea().type("Vacations")
         leavePage.getApplyBtn().click()
+
+    })
+
+    it('9. Retrieve emergency contacts', function(){
+        const utility = new UtilityFunc()
+        const myInfo = new MyInfoPage()
+
+        utility.openURL(this.data.url)
+        utility.getLogIn(this.data.userName, this.data.passWord)
+        myInfo.getMyInfo().click()
+        myInfo.getEmergencyContatct().should('be.visible').click()
+        myInfo.getEmgContactList().each(($el, index, $list) => {
+            const value = $el.text()
+            cy.log(value)
+        })
+
 
     })
     
