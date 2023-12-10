@@ -4,7 +4,14 @@
   "description": "Cypress POM Framework JobSearch Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "firefixTest": "npm run test -- --browser firefox",
+    "cloudheadTest": "npm run test -- --record --key ed807941-d603-4800-9e4f-28cf9e45570e --spec cypress/e2e/testcases/*.js --headed --browser firefox",
+    "cloudTest": "npm run test -- --record --key ed807941-d603-4800-9e4f-28cf9e45570e --spec cypress/e2e/testcases/*.js",
+    "cloudTestAll": "npm run test -- --record --key ed807941-d603-4800-9e4f-28cf9e45570e"
+
   },
   "repository": {
     "type": "git",
